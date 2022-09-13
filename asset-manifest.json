@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/weather-tracking-website/static/js/main.ae78a339.js",
+    "index.html": "/weather-tracking-website/index.html",
+    "main.ae78a339.js.map": "/weather-tracking-website/static/js/main.ae78a339.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ae78a339.js"
+  ]
+}
