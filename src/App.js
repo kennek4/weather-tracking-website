@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useState } from "react";
+import weatherCall from "./api/weatherCall";
 
 function App() {
+
+  const [weatherData, setWeatherData] = useState({});
+  const [measurementSystem, setMeasurementSystem] = useState("metric");
+  const weatherClass = new weatherCall(measurementSystem);
+
+  const handleAPICall = (e) => {
+    e.preventDefault();
+    weatherClass.getWeatherData("Edmonton", 2);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <button onClick={handleAPICall}>Call API</button>
+      <button onClick={() => { weatherClass.parseData() }}>Show Some Data</button>
+    </>
   );
 }
 
